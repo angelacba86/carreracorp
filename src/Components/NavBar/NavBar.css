@@ -1,0 +1,105 @@
+.NavBar{
+    position:relative;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.751);
+    z-index: 1
+}
+.NavBar > .nav-logo{
+    margin: 15px;
+    width: 270px;
+    height: auto;
+}
+
+.NavBar > .nav-items > a{
+    position:relative;
+    margin: 15px;
+    color:antiquewhite;
+    opacity: 0.9;
+}
+.NavBar > .nav-items > a:hover{
+    opacity: 1;
+}
+.NavBar > .nav-items > a:before{
+    content:"";
+    position: absolute;
+    left:0;
+    bottom:0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all .45s
+}
+.NavBar > .nav-items >a:hover::before {
+    width:100%
+}
+.NavBar > .nav-toggle{
+    display:none;
+
+}
+@media(max-width:900px){
+   .NavBar > .nav-items{
+    position: absolute;
+    top:60px;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(0, 0, 0, 0.751);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition:all .45s
+   }
+   .NavBar > .nav-items > a::before{
+    background: transparent;
+   }
+   .NavBar > .nav-items.open{
+    transform: translateX(0);
+   }
+   .NavBar > .nav-toggle{
+    display:flex;
+    width:50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   }
+   .nav-toggle > .bar{
+    position:relative;
+    width:32px;
+    height: 2px;
+    background-color: antiquewhite;
+    transition: all .45s ease-in-out;
+   }
+   .nav-toggle > .bar::before, .nav-toggle > .bar::after{
+    content: "";
+    position:absolute;
+    height: 2px;
+    border-radius: 2px;
+    background-color: antiquewhite;
+    transition: all .45s ease-in-out;
+   }
+   .nav-toggle > .bar::before{
+    width:25px;
+    transition: translateY(-8px);
+    width: 32px;
+   }
+   .nav-toggle > .bar::after{
+    width:32px;
+    transform: translateY(8px);
+   }
+   .nav-toggle.open > .bar{
+    transform: translateX(40px);
+    background-color: transparent;
+   }
+   .nav-toggle.open > .bar::before{
+    width: 32px;
+    transform: rotate(45deg) translate(26px, -26px);
+   }
+   .nav-toggle.open > .bar::after{
+    transform: rotate(-45deg) translate(26px, 26px);
+   }
+}
