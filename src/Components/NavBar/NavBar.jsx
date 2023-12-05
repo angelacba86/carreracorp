@@ -1,11 +1,12 @@
 // import { Link} from 'react-router-dom';
 import { useState } from 'react'
-import './NavBar.css'
+import './NavBar.css';
+import Recurso3 from "../../img/1x/Recurso 3.png"
 const NavBar = ()=>{
     const [isOpen, setIsOpen]= useState(false);
     return(
         <div className='NavBar'>
-        <img className='nav-logo' alt='logo' src='..\img\logo@2x.png'/>
+        <img className='nav-logo' alt='logo' src={Recurso3}/>
         <div className={`nav-items ${isOpen && "open"}`}>
            <a href='#'>NOSOTROS</a> 
            <a href='#'>SERVICIOS</a>
